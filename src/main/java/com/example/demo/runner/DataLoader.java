@@ -22,7 +22,7 @@ public class DataLoader implements ApplicationRunner{
 	@Override
 	public void run(ApplicationArguments args) throws Exception {
 		// TODO Auto-generated method stub
-		
+		repo.deleteAll();
 		
 		// cash plan
 		CitizenPlan citizenPlan1 = new CitizenPlan();
