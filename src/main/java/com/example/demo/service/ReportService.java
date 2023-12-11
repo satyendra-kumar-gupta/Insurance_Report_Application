@@ -11,7 +11,7 @@ public interface ReportService {
 	
 	public List<String> getPlaneStatuses();
 	
-	public List<CitizenPlan> search(SearchRequest searchRquest);
+	public List<CitizenPlan> searchCitizenPlan(SearchRequest searchRquest);
 	
 	public boolean exportExcel();
 	public boolean exportPDF();

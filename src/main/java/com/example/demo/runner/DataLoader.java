@@ -8,11 +8,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import com.example.demo.entity.CitizenPlan;
 import com.example.demo.repository.CitezenplanRepository;
 
-@SuppressWarnings("unused")
+
 @Component
 public class DataLoader implements ApplicationRunner{
 
