@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://jakarta.apache.org/taglibs/standard/permittedTaglibs" prefix="pt" %>
+
+
 <html>
 <head>
 <meta charset="ISO-8859-1">
@@ -9,11 +14,86 @@
 </head>
 <body>
 	<div class="container"> 
-		<h3> Report Application </h3>
+		<h3 class="pb-3 pt-3"> Report Application </h3>
 		
 		
+		<form:form action="search" modelAtttribute ="command" method ="POST">
+			<table>
+				<tr>
+					<td>Plane Name:</td>
+					<td>
+						<form:select path="planName">
+						<form:option value="names"> -Select- </form:option>
+						<form:options items="${names}"/>
+						</form:select>
+					</td>
+					
+					<td>Plane Status:</td>
+					<td>
+						<form:select path="planStatus">
+						<form:option value="status"> -Select- </form:option>
+						<form:options items="${status}"/>
+						</form:select>
+					</td>
+					
+					<td>Gender:</td>
+					<td>
+				    	<form:select path="gender">
+						<form:option value=""> -select-</form:option>
+						<form:option value="Male"> Male</form:option>
+						<form:option value="Fe-male"> Fe-male</form:option>
+						</form:select>
+					</td>
+					
+					<tr>
+						<td>Start Date:</td>
+						<td>
+								<form:input path="startDate" type ="date"/>
+						</td>
+						<td>End Date:</td>
+							<td>
+								<form:input path="endDate" type ="date"/>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<input type="submit" value="Search" class ="btn btn-primary"/>
+						</td>
+						
+					</tr>
+					
+				</tr>
+			</table>
+		</form:form>
 		
-		<button class = "btn btn-primary"> Search </button>
+		<hr/>
+		<table class="table table-striped table-hover">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Holder Name</th>
+					<th>Plan Name</th>
+					<th>Plan Status</th>
+					<th>Start Date</th>
+					<th>End Date</th>
+				</tr>
+			</thead>
+			
+			<tbody>
+				
+				<c:forEach items="${citizenPlans}" val="plan">
+					<tr>
+						<td>${plan.citizenId}</td>
+					</tr>
+				</c:forEach>
+				
+			</tbody>
+			
+		</table>
+		<hr/>
+		
+		Export: <a href=""> Excel</a>  <a href=""> PDF</a>
 	</div>
 	
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

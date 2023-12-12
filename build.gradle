@@ -26,6 +26,23 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-mail'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:10.1.16'
+
+	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'
+	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.0'
+	implementation 'jstl:jstl:1.2'
+	
+	
+	runtimeOnly 'org.apache.taglibs:taglibs-standard-impl:1.2.5'
+	implementation 'org.apache.taglibs:taglibs-standard-spec:1.2.5'
+	implementation 'org.apache.taglibs:taglibs-standard-jstlel:1.2.5'
+	implementation 'org.apache.taglibs:taglibs-standard-compat:1.2.5'
+	implementation 'org.apache.taglibs:taglibs-standard:1.2.5'
+	implementation 'org.apache.taglibs:taglibs-build-tools:1.2.5'
+	implementation 'org.apache.taglibs:taglibs-parent:3'
+	implementation group: 'org.apache.taglibs', name: 'taglibs-standard-spec', version: '1.2.5'
+	compileOnly 'javax.servlet.jsp:jsp-api:2.0'
+	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:2.0.0-RC1'
+	
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'org.postgresql:postgresql'

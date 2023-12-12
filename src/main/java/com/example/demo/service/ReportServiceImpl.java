@@ -13,24 +13,26 @@ import com.example.demo.search.SearchRequest;
 public class ReportServiceImpl implements ReportService{
 	
 	@Autowired
-	CitezenplanRepository citezenplanRepository;
+	CitezenplanRepository citezenRepo;
 
 	@Override
 	public List<String> getplaneName() {
 		// TODO Auto-generated method stub
-		return null;
+		List<String> planName = citezenRepo.getPlaneNames();
+		return planName;
 	}
 
 	@Override
 	public List<String> getPlaneStatuses() {
 		// TODO Auto-generated method stub
-		return null;
+		List<String> planStatus = citezenRepo.getPlaneStatus();
+		return planStatus;
 	}
 
 	@Override
-	public List<CitizenPlan> searchCitizenPlan(SearchRequest searchRquest) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<CitizenPlan> search(SearchRequest searchRquest) {
+		List<CitizenPlan> searchPlans = citezenRepo.findAll();
+		return searchPlans;
 	}
 
 	@Override
