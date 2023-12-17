@@ -3,7 +3,10 @@
 <!DOCTYPE html>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://jakarta.apache.org/taglibs/standard/permittedTaglibs" prefix="pt" %>
+
+
+
+
 
 
 <html>
@@ -27,7 +30,7 @@
 						<form:options items="${names}"/>
 						</form:select>
 					</td>
-					
+				
 					<td>Plane Status:</td>
 					<td>
 						<form:select path="planStatus">
@@ -35,7 +38,7 @@
 						<form:options items="${status}"/>
 						</form:select>
 					</td>
-					
+				
 					<td>Gender:</td>
 					<td>
 				    	<form:select path="gender">
@@ -44,7 +47,7 @@
 						<form:option value="Fe-male"> Fe-male</form:option>
 						</form:select>
 					</td>
-					
+				</tr>	
 					<tr>
 						<td>Start Date:</td>
 						<td>
@@ -63,7 +66,6 @@
 						
 					</tr>
 					
-				</tr>
 			</table>
 		</form:form>
 		
@@ -73,18 +75,33 @@
 				<tr>
 					<th>ID</th>
 					<th>Holder Name</th>
+					<th>Gender</th>
 					<th>Plan Name</th>
 					<th>Plan Status</th>
 					<th>Start Date</th>
 					<th>End Date</th>
+					<th>Benefit Amount</th>
+					<th>Denial Reason</th>
+					<th>Termination Date</th>
+					<th>Termination Rsn</th>
+
 				</tr>
 			</thead>
 			
 			<tbody>
-				
-				<c:forEach items="${citizenPlans}" val="plan">
+				<c:forEach items="${citizenPlans}" var="plan">
 					<tr>
 						<td>${plan.citizenId}</td>
+						<td>${plan.citizenName}</td>
+						<td>${plan.gender}</td>
+						<td>${plan.planeName}</td>
+						<td>${plan.planeStatus}</td>
+						<td>${plan.planeStartDate}</td>
+						<td>${plan.planeEnddate}</td>
+						<td>${plan.benefitAmount}</td>
+						<td>${plan.denialReason}</td>
+						<td>${plan.terminationDate}</td>
+						<td>${plan.terminationRsn}</td>
 					</tr>
 				</c:forEach>
 				
